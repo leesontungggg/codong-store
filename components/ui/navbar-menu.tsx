@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { formatMoney } from "@/lib/utils";
 
 const transition = {
   type: "spring",
@@ -80,16 +81,22 @@ export const Menu = ({
 export const ProductItem = ({
   title,
   description,
+  amount,
+  itemTotal,
   href,
   src,
+  removeItem
 }: {
   title: string;
   description: string;
+  amount: number;
+  itemTotal: number;
   href: string;
   src: string;
+  removeItem: () => void;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link href={href} className="flex space-x-8">
       <Image
         src={src}
         width={140}
@@ -101,9 +108,16 @@ export const ProductItem = ({
         <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className="text-neutral-700 mb-1 text-sm max-w-[10rem] dark:text-neutral-300">
           {description}
         </p>
+        <p className="text-neutral-700 mb-1 text-sm max-w-[10rem] dark:text-neutral-300">
+          Số lượng: {amount}
+        </p>
+        <p className="text-neutral-700 text-md max-w-[10rem] dark:text-neutral-300">
+          Thành tiền: {formatMoney(itemTotal)} đ
+        </p>
+        <a className="text-red-500 pt-4 text-sm" onClick={() => removeItem()}>Xóa khỏi giỏ hàng</a>
       </div>
     </Link>
   );
