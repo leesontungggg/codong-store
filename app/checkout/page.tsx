@@ -64,7 +64,6 @@ export default function CheckoutPage() {
   const onSubmit = async (
     values: z.infer<typeof formSchema>
   ): Promise<void> => {
-    // setIsLoading(true);
     const tempOrderId = makeid(5);
     const total = cart.reduce(
       (n, { price, amount }: any) => n + price * amount,
@@ -80,7 +79,6 @@ export default function CheckoutPage() {
     createNewOrder(orderData).then(() => {
       setOrderId(tempOrderId);
       showDialog(true);
-      // clearCart();
       toast({
         title: "Thành công",
         description: `Tạo đơn hàng thành công.`,
@@ -150,7 +148,7 @@ export default function CheckoutPage() {
               className="bg-slate-800 text-white w-fit mx-auto"
               onClick={() => form.handleSubmit(onSubmit)()}
             >
-              Tiến hành thanh toán
+              Tiến hành đặt hàng
             </Button>
             {Object.keys(form.formState?.errors).length > 0 && (
               <p className="mx-auto text-center mt-4 text-red-500">
@@ -249,12 +247,12 @@ export default function CheckoutPage() {
             <div className="flex flex-row justify-center items-center gap-4 mb-4">
               <p>Nội dung</p>
               <h3 className="text-blue-950 rounded-lg px-4 py-2 border border-dashed border-blue-950 bg-blue-950/20 flex items-center">
-                {`${orderId}_${form.getValues("phone")}`}
+                {`CD-${orderId}-${form.getValues("phone")}`}
                 <a
                   className="ml-4 cursor-pointer"
                   onClick={() =>
                     navigator.clipboard
-                      .writeText(`${orderId}_${form.getValues("phone")}`)
+                      .writeText(`CD-${orderId}-${form.getValues("phone")}`)
                       .then(() => toast({ title: "Sao chép thành công" }))
                   }
                 >
@@ -302,7 +300,12 @@ export default function CheckoutPage() {
               </h3>
             </div>
             <Image
-              src={`/vcb-qr.jpg`}
+              src={`https://img.vietqr.io/image/vietcombank-1028169568-compact2.png?amount=${cart.reduce(
+                (n, { price, amount }: any) => n + price * amount,
+                0
+              )}&addInfo=${`CD-${orderId}-${form.getValues(
+                "phone"
+              )}`}&accountName=LE%20HUYEN%20LINH`}
               width={384}
               height={384}
               alt="Co Dong"
