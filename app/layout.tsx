@@ -25,7 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta property="og:image" content="" />
+        <meta
+          property="og:image"
+          content="https://codong-store.vercel.app/codong_thumbnail_og.jpg"
+        />
         <meta property="og:title" content="Cổ Động Pre-order" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://codong-store.vercel.app/" />
