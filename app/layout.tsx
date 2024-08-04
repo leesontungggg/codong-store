@@ -25,16 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta
-          property="og:image"
-          content="https://www.luonghuetrinh.org/images/1.jpg"
-        />
-        <meta property="og:title" content="Luong Hue Trinh" />
+        <meta property="og:image" content="" />
+        <meta property="og:title" content="Cổ Động Pre-order" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.luonghuetrinh.org/" />
+        <meta property="og:url" content="https://codong-store.vercel.app/" />
         <meta
           property="og:description"
-          content="Vietnamese electroacoustic/multimedia composer, improviser"
+          content="Cổ Động T-shirt Preorder Site"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
