@@ -11,21 +11,22 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCartStore } from "@/providers/cart-store-provider";
 import { formatMoney } from "@/lib/utils";
+import { usePathname } from 'next/navigation'
 
 export default function Navbar({ className }: { className?: string }) {
   const { cart, removeCartItem } = useCartStore((state) => state);
   const [active, setActive] = useState<string | null>(null);
   const router = useRouter();
-  console.log("cart", cart.length);
+  const pathname = usePathname()
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 flex flex-col justify-center items-center",
+        "fixed md:top-10 inset-x-0 max-w-2xl mx-auto z-50 flex flex-col justify-center items-center",
         className
       )}
     >
       <Image
-        className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert cursor-pointer"
+        className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert cursor-pointer w-[100px] h-[100px] md:w-[150px] md:h-[150px]"
         src="/codong-white.png"
         alt="Next.js Logo"
         width={150}
@@ -34,7 +35,7 @@ export default function Navbar({ className }: { className?: string }) {
         onClick={() => router.push("/")}
       />
 
-      {cart.length > 0 && (
+      {pathname !== '/checkout' && cart.length > 0 && (
         <Menu setActive={setActive}>
           {/* <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">

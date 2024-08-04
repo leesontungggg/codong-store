@@ -37,6 +37,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
+
 const formSchema = z.object({
   name: z.string().nonempty(),
   email: z.string().nonempty(),
@@ -95,10 +97,10 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="w-screen min-h-screen h-fit flex items-center justify-center">
+    <div className="w-screen min-h-screen h-fit flex items-center justify-center p-4">
       {!dialog && (
-        <div className="grid grid-cols-2 container mt-16 bg-white mx-auto rounded-2xl gap-4 divide-x border">
-          <div className="p-4 flex flex-col justify-center items-center text-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 container px-2 py-4 mt-auto md:mt-0 bg-white mx-auto rounded-2xl gap-4 md:divide-x border">
+          <div className="p-1 md:p-4 flex flex-col justify-center items-center text-lg">
             Vui lòng điền thông tin thanh toán
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-4 items-center gap-4">
@@ -156,7 +158,7 @@ export default function CheckoutPage() {
               </p>
             )}
           </div>
-          <div className="p-4">
+          <div className="p-2 md:p-4">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -191,10 +193,10 @@ export default function CheckoutPage() {
                   </TableRow>
                 ))}
                 <TableRow>
-                  <TableCell colSpan={3} className="text-xl">
+                  <TableCell colSpan={2} className="text-xl">
                     Tổng
                   </TableCell>
-                  <TableCell className="text-right text-xl">
+                  <TableCell colSpan={2} className="text-right text-xl">
                     {`${formatMoney(
                       cart.reduce(
                         (n, { price, amount }: any) => n + price * amount,

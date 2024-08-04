@@ -41,12 +41,12 @@ const DetailPage = ({
 
   if (currentProduct) {
     return (
-      <main className="grid grid-cols-2 gap-24 p-24 min-h-screen container mx-auto">
+      <main className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-24 px-12 md:px-24 py-48 md:py-24 min-h-screen container mx-auto">
         <Carousel className="w-full flex flex-col justify-center">
           <CarouselContent>
             {currentProduct?.images.map((image: string, index: number) => (
               <CarouselItem key={index}>
-                <div className="p-1">
+                <div className="md:p-1">
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-6">
                       {/* <span className="text-4xl font-semibold">{index + 1}</span> */}

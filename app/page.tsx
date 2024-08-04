@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   return (
-    <main className="grid grid-cols-2 gap-24 p-24 min-h-screen">
+    <main className="grid grid-cols-1 md:grid-cols-2 gap-24 p-24 pt-48 md:pt-24 min-h-screen">
       <a
         className="mx-auto my-auto cursor-pointer"
         onClick={() => {

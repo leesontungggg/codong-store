@@ -71,7 +71,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-3 py-2 md:px-8 md:py-6 "
     >
       {children}
     </nav>
@@ -85,7 +85,7 @@ export const ProductItem = ({
   itemTotal,
   href,
   src,
-  removeItem
+  removeItem,
 }: {
   title: string;
   description: string;
@@ -117,7 +117,9 @@ export const ProductItem = ({
         <p className="text-neutral-700 text-md max-w-[10rem] dark:text-neutral-300">
           Thành tiền: {formatMoney(itemTotal)} đ
         </p>
-        <a className="text-red-500 pt-4 text-sm" onClick={() => removeItem()}>Xóa khỏi giỏ hàng</a>
+        <a className="text-red-500 pt-4 text-sm" onClick={() => removeItem()}>
+          Xóa khỏi giỏ hàng
+        </a>
       </div>
     </Link>
   );

@@ -42,12 +42,13 @@ export default function RootLayout({
       <CartStoreProvider>
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "min-h-screen font-sans antialiased",
             fontSans.variable
           )}
           style={{
             backgroundImage: `url("/background-2.jpg")`,
             backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
           <Navbar />

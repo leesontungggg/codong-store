@@ -106,7 +106,7 @@ export function ProductForm(props: ProductFormProps) {
     });
   };
   return (
-    <div className="w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black my-auto h-fit">
+    <div className="w-full mx-auto rounded-lg md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black my-auto h-fit">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         {props.product?.name}
       </h2>
