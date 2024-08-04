@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Roboto as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/toaster";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: "300",
 });
 
 export const metadata: Metadata = {
@@ -23,6 +24,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          property="og:image"
+          content="https://www.luonghuetrinh.org/images/1.jpg"
+        />
+        <meta property="og:title" content="Luong Hue Trinh" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.luonghuetrinh.org/" />
+        <meta
+          property="og:description"
+          content="Vietnamese electroacoustic/multimedia composer, improviser"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </head>
       <CartStoreProvider>
         <body
           className={cn(

@@ -18,13 +18,6 @@ export default function Home() {
           containerClassName="max-w-sm mx-auto my-auto select-none"
           className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 mx-auto"
         >
-          {/* <Image
-          src={`/jordans.webp`}
-          alt="jordans"
-          height="400"
-          width="400"
-          className="object-contain"
-        /> */}
           <Image
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert w-full h-auto select-none pointer-events-none rounded-lg"
             src="/shirt-black.jpg"
@@ -65,7 +58,7 @@ export default function Home() {
           className="object-contain"
         /> */}
           <Image
-            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert w-full h-auto"
+            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert w-full h-auto select-none pointer-events-none rounded-lg"
             src="/hat.jpg"
             alt="Co Dong"
             width={180}
