@@ -47,8 +47,7 @@ export default function RootLayout({
           )}
           style={{
             backgroundImage: `url("/background-2.jpg")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundSize: "contain",
           }}
         >
           <Navbar />
