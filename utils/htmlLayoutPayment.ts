@@ -65,7 +65,7 @@ export default function htmlLayoutPayment(
                   display: inline-block;
                   min-width: 204px;
                 "
-                >Tình trạng thanh toán/Payment Status</span
+                >Tình trạng thanh toán</span
               ><b style="color: green; font-weight: normal; margin: 0"
                 >Đã thanh toán</b
               >
@@ -88,7 +88,7 @@ export default function htmlLayoutPayment(
                   display: inline-block;
                   min-width: 200px;
                 "
-                >Tổng tiền/Total</span
+                >Tổng tiền</span
               >
               ${formatMoney(GUEST_TOTAL_MONEY)} VNĐ
             </p>
@@ -101,13 +101,13 @@ export default function htmlLayoutPayment(
           <td style="padding: 20px; vertical-align: top">
             <p style="margin: 0 0 10px 0; padding: 0; font-size: 14px">
               <span style="display: block; font-weight: bold; font-size: 13px"
-                >Họ và tên/Name</span
+                >Họ và tên</span
               >
               ${GUEST_NAME}
             </p>
             <p style="margin: 0 0 10px 0; padding: 0; font-size: 14px">
               <span style="display: block; font-weight: bold; font-size: 13px"
-                >Số điện thoại/Phone Number</span
+                >Số điện thoại</span
               >
               ${GUEST_PHONE}
             </p>
@@ -137,7 +137,7 @@ export default function htmlLayoutPayment(
                   style="
                     font-weight: bold;
                     display: inline-block;
-                    min-width: 204px;
+                    min-width: 50%;
                   "
                 >${item.name} - ${item.color} - ${item.size}</span
                 ><b style="font-weight: normal; margin: 0"
@@ -154,11 +154,11 @@ export default function htmlLayoutPayment(
                   style="
                     font-weight: bold;
                     display: inline-block;
-                    min-width: 200px;
+                    min-width: 50%;
                   "
                   >Thành tiền</span
                 >
-                ${formatMoney(item.itemTotal)} VNĐ
+                <strong>${formatMoney(item.itemTotal)} VNĐ</strong>
               </p>
             </td>
             </tr>
