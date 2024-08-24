@@ -169,10 +169,11 @@ export default function htmlLayoutPayment(
       <tfooter>
         <tr>
           <td colspan="2" style="font-size: 14px; padding: 50px 15px 0 15px">
-            Mọi thắc mắc xin liên hệ: Hoàng Huy Thịnh
+            Mọi thắc mắc xin liên hệ:
             <br />
-            <b>Phone:</b> 093 687 0616<br />
             <b>Email:</b> codongmerch@gmail.com
+            <br />
+            <b>Fanpage:</b> <a href="https://www.facebook.com/Codongpage">https://www.facebook.com/Codongpage</a>
             <br />
           </td>
         </tr>
