@@ -9,7 +9,7 @@ export default function ThankyouPage() {
         đóng link pre-order.
         <br />
         <br />
-        Đối với áo Cổ Động, mọi người sẽ nhận được hàng sau 7 ngày kể từ khi
+        Đối với áo Cổ Động, mọi người sẽ nhận được hàng sau 7 - 10 ngày kể từ khi
         đóng link pre-order.
         <br />
         <br />

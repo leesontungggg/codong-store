@@ -34,7 +34,7 @@ export default function Home() {
             Áo được làm từ vải, dùng để mặc.
           </p>
           <button className="rounded-full pl-1 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-            <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
+            <span className="bg-zinc-700 rounded-full text-[1rem] px-2 py-0 text-white">
               {formatMoney(420000)} đ
             </span>
           </button>
@@ -73,7 +73,7 @@ export default function Home() {
             Nón màu đen, được dùng để đội.
           </p>
           <button className="rounded-full pl-1 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-            <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
+            <span className="bg-zinc-700 rounded-full text-[1rem] px-2 py-0 text-white">
               {formatMoney(200000)} đ
             </span>
           </button>

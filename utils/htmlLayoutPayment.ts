@@ -164,6 +164,9 @@ export default function htmlLayoutPayment(
             </tr>
           `
         )}
+        <tr>
+        <td colspan="2" style="padding-top: 24px">Mọi người sẽ nhận được hàng sau 7 - 10 ngày kể từ khi đóng link pre-order vào ngày 9/9/2024<td>
+        </tr>
           
       </tbody>
       <tfooter>
