@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { BackgroundGradient } from "@/components/ui/background-gradient";
-import { formatMoney } from "@/lib/utils";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -34,6 +32,15 @@ const DetailPage = ({
       colors: [],
       sizes: [],
       images: ["hat.jpg"],
+    },
+    "combo-ao-va-non": {
+      name: "Combo Áo và Nón Cổ Động",
+      description: "Đúng vậy",
+      price: 580000,
+      colors: ["Đen", "Be"],
+      sizes: ["M", "L", "XL", "2XL"],
+      images: ["shirt-black-combo.jpg", "shirt-cream-combo.jpg"],
+      note: "Màu sắc và size chỉ áp dụng đối với áo",
     },
   };
 

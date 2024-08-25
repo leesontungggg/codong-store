@@ -76,7 +76,26 @@ export function ProductForm(props: ProductFormProps) {
   };
 
   const handleSubmit = (value: any) => {
-    console.log("this is running");
+    let productImage;
+
+    switch (props.product.name) {
+      case "Áo Cổ Động":
+        productImage =
+          value.color === "Đen" ? "shirt-black.jpg" : "shirt-cream.jpg";
+        break;
+
+      case "Nón Cổ Động":
+        productImage = "hat.jpg";
+        break;
+
+      case "Combo Áo và Nón Cổ Động":
+        productImage =
+          value.color === "Đen"
+            ? "shirt-black-combo.jpg"
+            : "shirt-cream-combo.jpg";
+        break;
+    }
+
     const cartItem = {
       id: uuidv4(),
       ...value,
@@ -84,12 +103,7 @@ export function ProductForm(props: ProductFormProps) {
       description: props.product.description,
       price: props.product.price,
       itemTotal: props.product.price * value.amount,
-      image:
-        props.product.name === "Áo Cổ Động"
-          ? value.color === "Đen"
-            ? "shirt-black.jpg"
-            : "shirt-cream.jpg"
-          : "hat.jpg",
+      image: productImage,
     };
     addCartItem(cartItem);
     toast({
@@ -113,6 +127,11 @@ export function ProductForm(props: ProductFormProps) {
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
         {props.product?.description}
       </p>
+      {props.product?.note && (
+        <p className="text-red-700 text-sm max-w-sm mt-2 dark:text-neutral-300">
+          ***Note: {props.product?.note}
+        </p>
+      )}
 
       <form className="my-8" onSubmit={form.handleSubmit(handleSubmit)}>
         {props.product?.colors?.length > 0 && (
