@@ -36,6 +36,7 @@ import createNewOrder from "@/lib/actions/creat-new-order";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import sendEmailBooking from "@/lib/actions/send-email-book";
 
 const formSchema = z.object({
   name: z.string().nonempty(),
@@ -79,6 +80,8 @@ export default function CheckoutPage() {
     createNewOrder(orderData).then(() => {
       setOrderId(tempOrderId);
       showDialog(true);
+      // Handle send email booking order here
+      sendEmailBooking(orderData);
       toast({
         title: "Thành công",
         description: `Tạo đơn hàng thành công.`,
