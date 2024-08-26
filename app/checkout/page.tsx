@@ -37,8 +37,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
-
 const formSchema = z.object({
   name: z.string().nonempty(),
   email: z.string().nonempty(),
@@ -99,7 +97,7 @@ export default function CheckoutPage() {
   return (
     <div className="w-screen min-h-screen h-fit flex items-center justify-center p-4">
       {!dialog && (
-        <div className="grid grid-cols-1 md:grid-cols-2 container px-2 py-4 mt-auto md:mt-0 bg-white mx-auto rounded-2xl gap-4 md:divide-x border">
+        <div className="grid grid-cols-1 md:grid-cols-2 container px-2 py-4 mt-28 md:mt-0 bg-white mx-auto rounded-2xl gap-4 md:divide-x border">
           <div className="p-1 md:p-4 flex flex-col justify-center items-center text-lg">
             Vui lòng điền thông tin thanh toán
             <div className="grid gap-4 py-4">
@@ -211,7 +209,7 @@ export default function CheckoutPage() {
         </div>
       )}
       <Dialog open={dialog}>
-        <DialogContent className="sm:max-w-[425px] md:max-w-md">
+        <DialogContent className="sm:max-w-[425px] md:max-w-md h-screen">
           <DialogHeader>
             <DialogTitle>Thông tin thanh toán</DialogTitle>
             <DialogDescription>
@@ -219,7 +217,7 @@ export default function CheckoutPage() {
               toán đơn hàng
             </DialogDescription>
           </DialogHeader>
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-start items-center h-full overflow-scroll">
             <div className="flex flex-row justify-center items-center gap-4 mt-4 mb-4">
               <p>Số tiền</p>
               <h3 className="text-blue-950 rounded-lg px-4 py-2 border border-dashed border-blue-950 bg-blue-950/20 flex items-center">
