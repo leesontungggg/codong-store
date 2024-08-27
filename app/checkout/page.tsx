@@ -80,16 +80,15 @@ export default function CheckoutPage() {
     createNewOrder(orderData).then(() => {
       setOrderId(tempOrderId);
       showDialog(true);
-      sendEmailBooking(orderData).then(() => {
-        toast({
-          title: "Thành công",
-          description: `Tạo đơn hàng thành công.`,
-        });
+      // sendEmailBooking(orderData);
+      fetch("/api/confirm-booking", {
+        method: "POST",
+        body: JSON.stringify(orderData),
       });
-      // fetch("/confirm-booking", {
-      //   method: "POST",
-      //   body: JSON.stringify({ username: "example" }),
-      // });
+      toast({
+        title: "Thành công",
+        description: `Tạo đơn hàng thành công.`,
+      });
     });
   };
 
