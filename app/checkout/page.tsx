@@ -80,7 +80,6 @@ export default function CheckoutPage() {
     createNewOrder(orderData).then(() => {
       setOrderId(tempOrderId);
       showDialog(true);
-      // Handle send email booking order here
       sendEmailBooking(orderData);
       toast({
         title: "Thành công",

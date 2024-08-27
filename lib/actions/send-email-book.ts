@@ -1,9 +1,9 @@
 "use server";
 import transporter from "@/utils/email";
-import { REGISTER_INFO } from "@/utils/constant";
 import htmlLayoutBooking from "@/utils/htmlLayoutBooking";
 
 export default async function sendEmailBooking(data: any) {
+  console.log('this is running');
   const mailOptions = {
     subject: `Xác nhận đặt hàng pre order Cổ Động Merch`,
     html: htmlLayoutBooking(
