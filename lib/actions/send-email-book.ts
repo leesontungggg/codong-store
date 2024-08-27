@@ -3,7 +3,6 @@ import transporter from "@/utils/email";
 import htmlLayoutBooking from "@/utils/htmlLayoutBooking";
 
 export default async function sendEmailBooking(data: any) {
-  console.log('this is running');
   const mailOptions = {
     subject: `Xác nhận đặt hàng pre order Cổ Động Merch`,
     html: htmlLayoutBooking(
@@ -19,7 +18,7 @@ export default async function sendEmailBooking(data: any) {
     from: `Cổ Động <codongmerch@gmail.com>`,
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
+  await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
     } else {
