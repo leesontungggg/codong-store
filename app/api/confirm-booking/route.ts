@@ -28,5 +28,5 @@ export async function POST(request: Request) {
   });
 
   console.log("Cronjob is finished");
-  return Response.json({});
+  return Response.json({ message: "ok" });
 }
