@@ -5,6 +5,11 @@ export default function ThankyouPage() {
         Cảm ơn bà con đã đặt hàng và cổ động chúng tôi!
         <br />
         <br />
+        Bạn vui lòng kiểm tra email và thanh toán theo hướng dẫn trong vòng 24h.
+        <br />
+        Email xác nhận thanh toán thành công sẽ được gửi sau khi thanh toán thành công.
+        <br />
+        <br />
         Đối với nón Cổ Động, mọi người sẽ nhận được hàng sau một tuần kể từ khi
         đóng link pre-order.
         <br />
