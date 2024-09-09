@@ -3,9 +3,15 @@ import Image from "next/image";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { formatMoney } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
+
+  useEffect(() => {
+    router.push('https://www.facebook.com/Codongpage')
+  }, []);
+
   return (
     <main className="grid grid-cols-1 md:grid-cols-3 gap-10 p-24 pt-48 md:pt-24 min-h-screen">
       <a

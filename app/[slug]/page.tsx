@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -10,12 +10,15 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ProductForm } from "@/components/sign-up-form";
+import { useEffect } from "react";
 
 const DetailPage = ({
   params: { slug: productSlug },
 }: {
   params: { slug: string };
 }) => {
+  const router = useRouter();
+
   const products: any = {
     "ao-co-dong": {
       name: "Áo Cổ Động",
@@ -45,6 +48,10 @@ const DetailPage = ({
   };
 
   const currentProduct = products[productSlug];
+
+  useEffect(() => {
+    router.push("https://www.facebook.com/Codongpage");
+  }, []);
 
   if (currentProduct) {
     return (
